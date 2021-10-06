@@ -1,8 +1,10 @@
 package cmd
 
-import "fmt"
-
+import (
+	"fmt"
+	"github.com/UltiRequiem/lorelai/pkg"
+)
 
 func Main() {
-  fmt.Println("Begin...")
+  fmt.Println(lorelai.GetLoremArray())
 }
