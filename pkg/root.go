@@ -25,6 +25,10 @@ func FormattedLoremWords(quantity int) string {
 	return formatWords(LoremWords(quantity))
 }
 
+func Word() string {
+	return formatWords(LoremWords(1))
+}
+
 func Phrase() string {
 	return formatWords(LoremWords(8))
 }
