@@ -6,5 +6,5 @@ import (
 )
 
 func Main() {
-  fmt.Println(lorelai.GetLoremArray())
+  fmt.Println(lorelai.GetParagraph())
 }
