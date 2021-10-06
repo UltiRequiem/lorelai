@@ -6,7 +6,29 @@
 ![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
 
-Lorem impsum Generator
+## Usage
+
+This package exports 8 functions:
+
+- [Word](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L29): Returns a Single word.
+
+> Example: "sodales"
+
+- [Sentence](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L34)
+
+- [Paragraph](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L39)
+
+- [FormattedLoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L24)
+
+- [LoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L10)
+
+- [Domain](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L10)
+
+- [URL](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L17)
+
+- [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22)
+
+## CLI Tool
 
 ### Installation
 
@@ -19,5 +41,3 @@ Or use a binary from [releases](https://github.com/UltiRequiem/lorelai/releases/
 ### License
 
 This project is licensed under the [MIT License](./LICENSE.md).
-
-> And if eating cake is wrong, I don't want to be right.
