@@ -77,6 +77,40 @@ go install github.com/UltiRequiem/lorelai@latest
 Or use a binary from
 [releases](https://github.com/UltiRequiem/lorelai/releases/latest).
 
+### Usage
+
+If you don't pass any flag or you pass the help flag:
+
+```
+ lorelai 1.0.0
+ Easily generate Lorem Ipsum on command line.
+
+ -h or --help           Print this
+
+ -w or --word           Number of words to print
+
+ -p or --paragraph      Number of paragraphs to print
+
+ -s or --sentences      Number of sentences to print
+
+ -o or --output         If passed it will try to put the output in a file
+
+ --url                  A random URL
+
+ --email               A random Email Address
+
+ --color              Print the output with colors?
+
+  Examples:
+      lorelai -w 55           # Will print 55 words
+      lorelai -p 5            # Will print 5 paragraphs
+      lorelai -s 5 --output b # Will write 5 sentences on file b if possible
+      lorelai -w 55 -s 5      # Will printe 55 words and 5 sentences
+
+ If you need more help, found a bug or want to suggest a new feature:
+ https://github.com/UltiRequiem/lorelai
+```
+
 ### License
 
 This project is licensed under the [MIT License](./LICENSE.md).
