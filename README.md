@@ -37,42 +37,41 @@ This package exports 8 functions:
 - [Word](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L29):
   Returns 1 Word
 
-> E.g: "sodales", "phasellus" , "diam", etc.
+E.g: "sodales", "phasellus" , "diam", etc.
 
 - [Sentence](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L34):
   Returns 8 Words
 
-> E.g: "Varius sed imperdiet amet laoreet ex sapien placerat.", "phasellus" ,
-> "diam", etc.
+E.g: "Varius sed imperdiet amet laoreet ex sapien placerat.", etc.
 
 - [Paragraph](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L39):
   Returns 45 Words
 
-> E.g: "Nisi lacinia ante non nunc eros nibh mattis enim orci ante in ornare
-> accumsan iaculis vel..."
+E.g: "Nisi lacinia ante non nunc eros nibh mattis enim orci ante in ornare
+accumsan iaculis vel..."
 
 - [FormattedLoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L24):
   It receives a number and returns a string with the number of words you have
   indicated. The first letter will be capital and the sentence will end with a
   dot.
 
-> E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed.", "Ligula.", etc.
+E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed.", "Ligula.", etc.
 
 - [LoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L10): It receives a number and returns a string with the number of words you have indicated.
 
-> E.g: "arcu", "blandit porttitor a scelerisque", "donec justo lacinia", etc.
+E.g: "arcu", "blandit porttitor a scelerisque", "donec justo lacinia", etc.
 
 - [Domain](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L10): Returns a domain
 
-> E.g: "neque.net", "arcu.org" , "lorem.io", etc.
+E.g: "neque.net", "arcu.org" , "lorem.io", etc.
 
 - [URL](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L17): Returns an URL
 
-> E.g: "https://pellentesque.org", "https://id.io" , "https://efficitur.com", etc.
+E.g: "https://pellentesque.org", "https://id.io" , "https://efficitur.com", etc.
 
 - [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22): Retuns an email address
 
-> E.g: "bibendum@id.pe", "ornare@duis.pe" , "quisque@faucibus.org", etc.
+E.g: "bibendum@id.pe", "ornare@duis.pe" , "quisque@faucibus.org", etc.
 
 ## CLI Tool
 
