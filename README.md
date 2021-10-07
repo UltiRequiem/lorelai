@@ -14,14 +14,7 @@ go get github.com/UltiRequiem/lorelai/pkg
 ### Convenience Utilities
 
 ```go
-package main
-
-import (
-	"fmt"
-	"github.com/UltiRequiem/lorelai/pkg"
-)
-
-func main() {
+func sayHi() {
 	fmt.Println(fmt.Sprintf("My, my name is: %s.", lorelai.Word()))
 	fmt.Println(fmt.Sprintf("My email address is %s", lorelai.Email()))
 	fmt.Println(fmt.Sprintf("My website is: %s", lorelai.URL()))

@@ -2,7 +2,7 @@ package cmd
 
 import "flag"
 
-func flags() (bool, int, int, int, string, bool, bool) {
+func flags() (bool, int, int, int, string, bool, bool, bool) {
 	help := flag.Bool("help", false, "Display Help")
 	helpShort := flag.Bool("h", false, "Display Help")
 
@@ -15,11 +15,15 @@ func flags() (bool, int, int, int, string, bool, bool) {
 	sentences := flag.Int("sentences", 0, "Number of sentences.")
 	sentencesShort := flag.Int("s", 0, "Number of sentences.")
 
-	output := flag.String("output", "", "Number of sentences.")
-	outputShort := flag.String("o", "", "Number of sentences.")
+	output := flag.String("output", "", "File to write output.")
+	outputShort := flag.String("o", "", "File to write output.")
 
-	url := flag.Bool("url", false, "Print")
-	email := flag.Bool("email", false, "Print")
+	url := flag.Bool("url", false, "Print an URL")
+	email := flag.Bool("email", false, "Print an Email Address")
+
+	colorful := flag.Bool("color", false, "Print with colors?")
+
+	flag.Usage = printHelp
 
 	flag.Parse()
 
@@ -59,5 +63,5 @@ func flags() (bool, int, int, int, string, bool, bool) {
 		output = outputShort
 	}
 
-	return *help || *helpShort, *words, *paragraph, *sentences, *output, *url, *email
+	return *help || *helpShort, *words, *paragraph, *sentences, *output, *url, *email, *colorful
 }

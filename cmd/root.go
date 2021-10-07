@@ -5,11 +5,12 @@ import (
 	"os"
 
 	"github.com/UltiRequiem/lorelai/pkg"
-	"github.com/fatih/color"
 )
 
+const VERSION = "1.0.0"
+
 func Main() {
-	help, words, paragraphs, sentences, output, url, email := flags()
+	help, words, paragraphs, sentences, output, url, email, colors := flags()
 
 	if help {
 		printHelp()
@@ -49,10 +50,20 @@ func Main() {
 			error(fmt.Sprintf("Error while trying to write %s.", output))
 		}
 
-		color.Blue("Done!")
-
 		return
 	}
 
-	fmt.Println(text[0 : len(text)-1])
+	if text != "" {
+		textNoNewline := text[0 : len(text)-1]
+
+		if colors {
+			printWithScanner(textNoNewline)
+                        return
+		}
+
+		fmt.Println(textNoNewline)
+		return
+	}
+
+	printHelp()
 }
