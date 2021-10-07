@@ -19,7 +19,7 @@ func flags() (bool, int, int, int, string, bool, bool) {
 	outputShort := flag.String("o", "", "Number of sentences.")
 
 	url := flag.Bool("url", false, "Print")
-	email := flag.Bool("emal", false, "Print")
+	email := flag.Bool("email", false, "Print")
 
 	flag.Parse()
 

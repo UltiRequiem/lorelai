@@ -13,14 +13,17 @@ func Main() {
 
 	if url {
 		fmt.Println(lorelai.URL())
+                return
 	}
 
 	if email {
 		fmt.Println(lorelai.Email())
+                return
 	}
 
 	if help {
 		printHelp()
+		return
 	}
 
 	text := ""
@@ -49,5 +52,4 @@ func Main() {
 	}
 
 	fmt.Println(text)
-
 }

@@ -8,7 +8,7 @@ import (
 
 // Get [quantity] words
 func LoremWords(quantity int) string {
-	rand.Seed(time.Now().Unix())
+	rand.Seed(time.Now().UnixNano())
 
 	lorem := ""
 
