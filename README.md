@@ -6,13 +6,19 @@
 ![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
 
+## Install
+
+```bash
+go get github.com/UltiRequiem/lorelai
+```
+
 ## Usage
 
 This package exports 8 functions:
 
 - [Word](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L29): Returns a Single word.
 
-> Example: "sodales"
+> Example: "sodales", "phasellus" , "diam", etc.
 
 - [Sentence](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L34)
 

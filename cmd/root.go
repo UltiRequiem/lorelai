@@ -6,5 +6,9 @@ import (
 )
 
 func Main() {
-  fmt.Println(lorelai.Domain())
+	help, words, paragraphs, sentences, output := flags()
+
+	fmt.Println(help, words, paragraphs, sentences, output)
+
+	fmt.Println(lorelai.URL())
 }
