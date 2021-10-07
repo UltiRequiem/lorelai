@@ -16,4 +16,8 @@ func main() {
 	fmt.Println("Let me tell you an history:")
 
 	fmt.Println(lorelai.Paragraph())
+
+	fmt.Println(fmt.Sprintf("Didn't you like the story? Let me tell you 4 words abou the author:"))
+
+        fmt.Println(lorelai.LoremWords(4))
 }

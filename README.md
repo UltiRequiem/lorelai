@@ -1,12 +1,11 @@
-# This is still a wip!
+# lorelai
 
-# Lorelai
-
-[![GitMoji](https://img.shields.io/badge/Gitmoji-%F0%9F%8E%A8%20-FFDD67.svg)](https://gitmoji.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Lines Of Code](https://img.shields.io/tokei/lines/github.com/UltiRequiem/lorelai?color=blue&label=Total%20Lines)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/fatih/color)](https://pkg.go.dev/github.com/fatih/color)
 ![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
+
+Lorelai its a [package](#documentation) and [command line tool](#cli-tool) focused on generate [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum).
 
 ## Install
 
@@ -14,14 +13,15 @@
 go get github.com/UltiRequiem/lorelai/pkg
 ```
 
-## Usage
+## Examples
+
+### Convenience Utilities
 
 ```go
 package main
 
 import (
 	"fmt"
-
 	"github.com/UltiRequiem/lorelai/pkg"
 )
 
@@ -29,16 +29,12 @@ func main() {
 	fmt.Println(fmt.Sprintf("My, my name is: %s.", lorelai.Word()))
 	fmt.Println(fmt.Sprintf("My email address is %s", lorelai.Email()))
 	fmt.Println(fmt.Sprintf("My website is: %s", lorelai.URL()))
-
-	fmt.Println(fmt.Sprintf(`My favorite phrase is: "%s"`, lorelai.FormattedLoremWords(5)))
-
-	fmt.Println("Let me tell you an history:")
-
-	fmt.Println(lorelai.Paragraph())
 }
 ```
 
 For more examples check the [examples directory](./example/main.go).
+
+### Documentation
 
 This package exports 8 functions:
 
