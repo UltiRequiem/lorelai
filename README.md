@@ -11,6 +11,16 @@ go get github.com/UltiRequiem/lorelai/pkg
 
 ## Examples
 
+### Generating Text
+
+```go
+func printTonsOfText() {
+	for i := 0; i < 10; i++ {
+          fmt.Println(lorelai.Paragraph())
+	}
+}
+```
+
 ### Convenience Utilities
 
 ```go
@@ -97,9 +107,9 @@ If you don't pass any flag or you pass the help flag:
 
  --url                  A random URL
 
- --email               A random Email Address
+ --email                A random Email Address
 
- --color              Print the output with colors?
+ --color                Print the output with colors?
 
   Examples:
       lorelai -w 55           # Will print 55 words

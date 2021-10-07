@@ -48,9 +48,9 @@ func printHelp() {
 
  --url                  A random URL
 
- --email               A random Email Address
+ --email                A random Email Address
 
- --color              Print the output with colors?
+ --color                Print the output with colors?
 
   Examples:
       lorelai -w 55           # Will print 55 words
