@@ -3,6 +3,8 @@
 A [package](#documentation) and [command line tool](#cli-tool) to generate
 [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum).
 
+![Cover](./assets/cover.gif)
+
 ## Install
 
 ```bash
