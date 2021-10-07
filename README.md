@@ -1,6 +1,7 @@
 # Lorelai ![Lines Of Code](https://img.shields.io/tokei/lines/github.com/UltiRequiem/lorelai?color=blue&label=Total%20Lines) [![PkgGoDev](https://pkg.go.dev/badge/github.com/UltiRequiem/lorelai)](https://pkg.go.dev/github.com/UltiRequiem/lorelai) ![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
 
-Lorelai its a [package](#documentation) and [command line tool](#cli-tool) focused on generate [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum).
+A [package](#documentation) and [command line tool](#cli-tool) to generate
+[Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum).
 
 ## Install
 
@@ -33,23 +34,45 @@ For more examples check the [examples directory](./example/main.go).
 
 This package exports 8 functions:
 
-- [Word](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L29): Returns a Single word.
+- [Word](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L29):
+  Returns 1 Word
 
-> Example: "sodales", "phasellus" , "diam", etc.
+> E.g: "sodales", "phasellus" , "diam", etc.
 
-- [Sentence](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L34)
+- [Sentence](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L34):
+  Returns 8 Words
 
-- [Paragraph](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L39)
+> E.g: "Varius sed imperdiet amet laoreet ex sapien placerat.", "phasellus" ,
+> "diam", etc.
 
-- [FormattedLoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L24)
+- [Paragraph](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L39):
+  Returns 45 Words
 
-- [LoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L10)
+> E.g: "Nisi lacinia ante non nunc eros nibh mattis enim orci ante in ornare
+> accumsan iaculis vel..."
 
-- [Domain](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L10)
+- [FormattedLoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L24):
+  It receives a number and returns a string with the number of words you have
+  indicated. The first letter will be capital and the sentence will end with a
+  dot.
 
-- [URL](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L17)
+> E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed.", "Ligula.", etc.
 
-- [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22)
+- [LoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L10): It receives a number and returns a string with the number of words you have indicated.
+
+> E.g: "arcu", "blandit porttitor a scelerisque", "donec justo lacinia", etc.
+
+- [Domain](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L10): Returns a domain
+
+> E.g: "neque.net", "arcu.org" , "lorem.io", etc.
+
+- [URL](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L17): Returns an URL
+
+> E.g: "https://pellentesque.org", "https://id.io" , "https://efficitur.com", etc.
+
+- [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22): Retuns an email address
+
+> E.g: "bibendum@id.pe", "ornare@duis.pe" , "quisque@faucibus.org", etc.
 
 ## CLI Tool
 
@@ -59,7 +82,8 @@ This package exports 8 functions:
 go install github.com/UltiRequiem/lorelai@latest
 ```
 
-Or use a binary from [releases](https://github.com/UltiRequiem/lorelai/releases/latest).
+Or use a binary from
+[releases](https://github.com/UltiRequiem/lorelai/releases/latest).
 
 ### License
 
