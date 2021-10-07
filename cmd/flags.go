@@ -2,7 +2,7 @@ package cmd
 
 import "flag"
 
-func flags() (bool, int, int, int, string) {
+func flags() (bool, int, int, int, string, bool, bool) {
 	help := flag.Bool("help", false, "Display Help")
 	helpShort := flag.Bool("h", false, "Display Help")
 
@@ -18,9 +18,8 @@ func flags() (bool, int, int, int, string) {
 	output := flag.String("output", "", "Number of sentences.")
 	outputShort := flag.String("o", "", "Number of sentences.")
 
-	// url := flag.Bool("url", false, "Print")
-	// email := flag.Bool("emal", false, "Print")
-
+	url := flag.Bool("url", false, "Print")
+	email := flag.Bool("emal", false, "Print")
 
 	flag.Parse()
 
@@ -60,5 +59,5 @@ func flags() (bool, int, int, int, string) {
 		output = outputShort
 	}
 
-	return *help || *helpShort, *words, *paragraph, *sentences, *output
+	return *help || *helpShort, *words, *paragraph, *sentences, *output, *url, *email
 }

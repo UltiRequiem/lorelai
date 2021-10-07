@@ -2,13 +2,52 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/UltiRequiem/lorelai/pkg"
+	"github.com/fatih/color"
 )
 
 func Main() {
-	help, words, paragraphs, sentences, output := flags()
+	help, words, paragraphs, sentences, output, url, email := flags()
 
-	fmt.Println(help, words, paragraphs, sentences, output)
+	if url {
+		fmt.Println(lorelai.URL())
+	}
 
-	fmt.Println(lorelai.URL())
+	if email {
+		fmt.Println(lorelai.Email())
+	}
+
+	if help {
+		printHelp()
+	}
+
+	text := ""
+
+	for i := 0; i < words; i++ {
+		text += lorelai.Word()
+	}
+
+	for i := 0; i < paragraphs; i++ {
+		text += lorelai.Paragraph()
+	}
+
+	for i := 0; i < sentences; i++ {
+		text += lorelai.Sentence()
+	}
+
+	if output != "" {
+		err := os.WriteFile(output, []byte(text), 0664)
+		if err != nil {
+			error(fmt.Sprintf("Error while trying to write %s.", output))
+		}
+
+		color.Blue("Done!")
+
+		return
+	}
+
+	fmt.Println(text)
+
 }

@@ -6,7 +6,15 @@ import (
 	"os"
 )
 
-func repeatedFlag(longName string, shortName string) {
-	color.Red(fmt.Sprintf("You cannot pass --%s and -%s at the same time!", longName, shortName))
+func error(text string) {
+	color.Red(text)
 	os.Exit(1)
+}
+
+func repeatedFlag(longName string, shortName string) {
+	error(fmt.Sprintf("You cannot pass --%s and -%s at the same time!", longName, shortName))
+}
+
+func printHelp() {
+	fmt.Println("TODO")
 }
