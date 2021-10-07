@@ -11,6 +11,11 @@ import (
 func Main() {
 	help, words, paragraphs, sentences, output, url, email := flags()
 
+	if help {
+		printHelp()
+		return
+	}
+
 	if url {
 		fmt.Println(lorelai.URL())
 		return
@@ -18,11 +23,6 @@ func Main() {
 
 	if email {
 		fmt.Println(lorelai.Email())
-		return
-	}
-
-	if help {
-		printHelp()
 		return
 	}
 
@@ -35,12 +35,12 @@ func Main() {
 
 	for i := 0; i < sentences; i++ {
 		text += lorelai.Sentence()
-		text += "\n"
+		text += "\n\n"
 	}
 
 	for i := 0; i < paragraphs; i++ {
 		text += lorelai.Paragraph()
-		text += "\n"
+		text += "\n\n"
 	}
 
 	if output != "" {
@@ -54,5 +54,5 @@ func Main() {
 		return
 	}
 
-	fmt.Println(text)
+	fmt.Println(text[0 : len(text)-1])
 }
