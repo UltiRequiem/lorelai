@@ -1,9 +1,4 @@
-# lorelai
-
-![Lines Of Code](https://img.shields.io/tokei/lines/github.com/UltiRequiem/lorelai?color=blue&label=Total%20Lines)
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/fatih/color)](https://pkg.go.dev/github.com/fatih/color)
-![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
+# Lorelai ![Lines Of Code](https://img.shields.io/tokei/lines/github.com/UltiRequiem/lorelai?color=blue&label=Total%20Lines) [![PkgGoDev](https://pkg.go.dev/badge/github.com/UltiRequiem/lorelai)](https://pkg.go.dev/github.com/UltiRequiem/lorelai) ![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
 
 Lorelai its a [package](#documentation) and [command line tool](#cli-tool) focused on generate [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum).
 
