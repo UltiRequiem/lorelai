@@ -11,7 +11,7 @@
 ## Install
 
 ```bash
-go get github.com/UltiRequiem/lorelai
+go get github.com/UltiRequiem/lorelai/pkg
 ```
 
 ## Usage

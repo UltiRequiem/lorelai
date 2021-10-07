@@ -3,6 +3,7 @@ package lorelai
 
 import (
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -27,7 +28,8 @@ func FormattedLoremWords(quantity int) string {
 
 // Get a single word
 func Word() string {
-	return formatWords(LoremWords(1))
+	word := LoremWords(1)
+	return strings.TrimSpace(strings.ToUpper(word[0:1]) + word[1:])
 }
 
 // Get a sentence, with the first word capitalized, of eight words that ends with a dot.

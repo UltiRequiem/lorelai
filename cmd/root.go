@@ -13,12 +13,12 @@ func Main() {
 
 	if url {
 		fmt.Println(lorelai.URL())
-                return
+		return
 	}
 
 	if email {
 		fmt.Println(lorelai.Email())
-                return
+		return
 	}
 
 	if help {
@@ -30,14 +30,17 @@ func Main() {
 
 	for i := 0; i < words; i++ {
 		text += lorelai.Word()
-	}
-
-	for i := 0; i < paragraphs; i++ {
-		text += lorelai.Paragraph()
+		text += "\n"
 	}
 
 	for i := 0; i < sentences; i++ {
 		text += lorelai.Sentence()
+		text += "\n"
+	}
+
+	for i := 0; i < paragraphs; i++ {
+		text += lorelai.Paragraph()
+		text += "\n"
 	}
 
 	if output != "" {
