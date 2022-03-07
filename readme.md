@@ -5,6 +5,8 @@ A [package](#documentation) and [command line tool](#cli-tool) to generate
 
 ![Cover](./assets/cover.gif)
 
+[Blog explaining this package](https://blog.ultirequiem.com/lorelai)
+
 ## Install
 
 ```bash
@@ -131,4 +133,4 @@ If you don't pass any flag or you pass the help flag:
 
 ### License
 
-This project is licensed under the [MIT License](./LICENSE.md).
+This project is licensed under the [MIT License](./license).
