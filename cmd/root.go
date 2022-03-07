@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	chigo "github.com/UltiRequiem/chigo/pkg"
 	"github.com/UltiRequiem/lorelai/pkg"
 )
 
@@ -57,7 +58,7 @@ func Main() {
 		textNoNewline := text[0 : len(text)-1]
 
 		if colors {
-			printWithScanner(textNoNewline)
+			chigo.PrintWithColors(textNoNewline)
                         return
 		}
 
