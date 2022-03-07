@@ -60,21 +60,27 @@ accumsan iaculis vel..."
   indicated. The first letter will be capital and the sentence will end with a
   dot.
 
-E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed.", "Ligula.", etc.
+E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed.",
+"Ligula.", etc.
 
-- [LoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L10): It receives a number and returns a string with the number of words you have indicated.
+- [LoremWords](https://github.com/UltiRequiem/lorelai/blob/main/pkg/root.go#L10):
+  It receives a number and returns a string with the number of words you have
+  indicated.
 
 E.g: "arcu", "blandit porttitor a scelerisque", "donec justo lacinia", etc.
 
-- [Domain](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L10): Returns a domain
+- [Domain](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L10):
+  Returns a domain
 
 E.g: "neque.net", "arcu.org" , "lorem.io", etc.
 
-- [URL](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L17): Returns an URL
+- [URL](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L17):
+  Returns an URL
 
 E.g: "https://pellentesque.org", "https://id.io" , "https://efficitur.com", etc.
 
-- [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22): Retuns an email address
+- [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22):
+  Retuns an email address
 
 E.g: "bibendum@id.pe", "ornare@duis.pe" , "quisque@faucibus.org", etc.
 
@@ -117,7 +123,7 @@ If you don't pass any flag or you pass the help flag:
       lorelai -w 55           # Will print 55 words
       lorelai -p 5            # Will print 5 paragraphs
       lorelai -s 5 --output b # Will write 5 sentences on file b if possible
-      lorelai -w 55 -s 5      # Will printe 55 words and 5 sentences
+      lorelai -w 55 -s 5      # Will print 55 words and 5 sentences
 
  If you need more help, found a bug or want to suggest a new feature:
  https://github.com/UltiRequiem/lorelai
