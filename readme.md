@@ -1,4 +1,8 @@
-# Lorelai ![Lines Of Code](https://img.shields.io/tokei/lines/github.com/UltiRequiem/lorelai?color=blue&label=Total%20Lines) [![PkgGoDev](https://pkg.go.dev/badge/github.com/UltiRequiem/lorelai)](https://pkg.go.dev/github.com/UltiRequiem/lorelai) ![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
+# Lorelai
+
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/UltiRequiem/lorelai)](https://pkg.go.dev/github.com/UltiRequiem/lorelai)
+![CodeQL](https://github.com/UltiRequiem/lorelai/workflows/CodeQL/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/lorelai)](https://goreportcard.com/report/github.com/UltiRequiem/lorelai)
 
 A [package](#documentation) and [command line tool](#cli-tool) to generate
 [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum).
@@ -37,7 +41,7 @@ func sayHi() {
 
 For more examples check the [examples directory](./example/main.go).
 
-### Documentation
+## Documentation
 
 This package exports 8 functions:
 
@@ -131,6 +135,13 @@ If you don't pass any flag or you pass the help flag:
  https://github.com/UltiRequiem/lorelai
 ```
 
-### License
+## Contributing
+
+Feel free to sugest new features or report bugs.
+
+A big thanks to [Antoineio](https://github.com/Antoineio) for adding tests and
+contributing to the CI.
+
+## License
 
 This project is licensed under the [MIT License](./license).
