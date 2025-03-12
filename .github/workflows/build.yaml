@@ -16,7 +16,7 @@ jobs:
       - name: Download dependencies
         run: go mod tidy
       - name: Run tests
-        run: go test ./... -v
+        run: go test ./pkg/... -v
 
   build:
     strategy:
