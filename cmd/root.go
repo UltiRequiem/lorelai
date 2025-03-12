@@ -59,7 +59,7 @@ func Main() {
 
 		if colors {
 			chigo.PrintWithColors(textNoNewline)
-                        return
+			return
 		}
 
 		fmt.Println(textNoNewline)

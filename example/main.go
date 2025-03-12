@@ -24,7 +24,7 @@ func sayHi() {
 
 func printTonsOfText() {
 	for i := 0; i < 10; i++ {
-          fmt.Println(lorelai.Paragraph())
+		fmt.Println(lorelai.Paragraph())
 	}
 }
 
