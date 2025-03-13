@@ -7,9 +7,8 @@ import (
 
 func TestDomain(t *testing.T) {
 	domain := Domain()
-	extensions := []string{"com", "net", "org", "io", "pe"}
 	valid := false
-	for _, v := range extensions {
+	for _, v := range TLDS {
 		if strings.HasSuffix(domain, v) {
 			valid = true
 			break
