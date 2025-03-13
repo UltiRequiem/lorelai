@@ -7,7 +7,7 @@ import (
 
 // Get a random Domain
 func Domain() string {
-	return trimSpaceAddDot(LoremWords(1)) + [5]string{"com", "net", "org", "io", "pe"}[rand.Intn(5)]
+	return trimSpaceAddDot(LoremWords(1)) + TLDS[rand.Intn(len(TLDS))]
 }
 
 // Get a random URL
