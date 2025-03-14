@@ -5,7 +5,7 @@ jobs:
   test:
     strategy:
       matrix:
-        go: ["1.17"]
+        go: ["1.18"]
     name: Go test
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +21,7 @@ jobs:
   build:
     strategy:
       matrix:
-        go: ["1.17"]
+        go: ["1.18"]
     runs-on: ubuntu-latest
     name: Build
     needs: test
