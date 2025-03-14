@@ -1,6 +1,18 @@
 package cmd
 
-import "flag"
+import (
+	"flag"
+)
+
+func resolveFlag[T comparable](longVal, shortVal *T, zero T, longName, shortName string) T {
+	if *longVal != zero && *shortVal != zero {
+		repeatedFlag(longName, shortName)
+	}
+	if *longVal != zero {
+		return *longVal
+	}
+	return *shortVal
+}
 
 func flags() (bool, int, int, int, string, bool, bool, bool) {
 	help := flag.Bool("help", false, "Display Help")
@@ -27,41 +39,11 @@ func flags() (bool, int, int, int, string, bool, bool, bool) {
 
 	flag.Parse()
 
-	if *help && *helpShort {
-		repeatedFlag("help", "h")
-	}
+	finalHelp := resolveFlag(help, helpShort, false, "help", "h")
+	finalWords := resolveFlag(words, wordsShort, 0, "words", "w")
+	finalParagraph := resolveFlag(paragraph, paragraphShort, 0, "paragraph", "p")
+	finalSentences := resolveFlag(sentences, sentencesShort, 0, "sentences", "s")
+	finalOutput := resolveFlag(output, outputShort, "", "output", "o")
 
-	if *words != 0 && *wordsShort != 0 {
-		repeatedFlag("words", "w")
-	}
-
-	if *paragraph != 0 && *paragraphShort != 0 {
-		repeatedFlag("paragraph", "p")
-	}
-
-	if *sentences != 0 && *sentencesShort != 0 {
-		repeatedFlag("sentences", "s")
-	}
-
-	if *output != "" && *outputShort != "" {
-		repeatedFlag("output", "o")
-	}
-
-	if *words == 0 {
-		words = wordsShort
-	}
-
-	if *paragraph == 0 {
-		paragraph = paragraphShort
-	}
-
-	if *sentences == 0 {
-		sentences = sentencesShort
-	}
-
-	if *output == "" {
-		output = outputShort
-	}
-
-	return *help || *helpShort, *words, *paragraph, *sentences, *output, *url, *email, *colorful
+	return finalHelp, finalWords, finalParagraph, finalSentences, finalOutput, *url, *email, *colorful
 }
