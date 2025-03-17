@@ -1,16 +1,17 @@
 package cmd
 
-import (
-	"flag"
-)
+import "flag"
+
 
 func resolveFlag[T comparable](longVal, shortVal *T, zero T, longName, shortName string) T {
 	if *longVal != zero && *shortVal != zero {
 		repeatedFlag(longName, shortName)
 	}
+	
 	if *longVal != zero {
 		return *longVal
 	}
+	
 	return *shortVal
 }
 

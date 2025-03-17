@@ -5,13 +5,13 @@ import (
 	"os"
 
 	chigo "github.com/UltiRequiem/chigo/pkg"
-	"github.com/UltiRequiem/lorelai/pkg"
+	lorelai "github.com/UltiRequiem/lorelai/pkg"
 )
 
-const VERSION = "1.0.0"
+const VERSION = "1.1.1"
 
 func Main() {
-	help, words, paragraphs, sentences, output, url, email, colors := flags()
+	help, words, paragraphs, sentences, fileToWrite, url, email, colors := flags()
 
 	if help {
 		printHelp()
@@ -45,17 +45,18 @@ func Main() {
 		text += "\n\n"
 	}
 
-	if output != "" {
-		err := os.WriteFile(output, []byte(text), 0664)
+	if fileToWrite != "" {
+		err := os.WriteFile(fileToWrite, []byte(text), 0664)
+
 		if err != nil {
-			error(fmt.Sprintf("Error while trying to write %s.", output))
+			error(fmt.Sprintf("Error while trying to write %s.", fileToWrite))
 		}
 
 		return
 	}
 
 	if text != "" {
-		textNoNewline := text[0 : len(text)-1]
+		textNoNewline := text[0 : len(text)-2] // Remove the new line at the end
 
 		if colors {
 			chigo.PrintWithColors(textNoNewline)

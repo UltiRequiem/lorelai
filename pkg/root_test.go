@@ -32,9 +32,11 @@ func TestFormattedLoremWords(t *testing.T) {
 func TestWord(t *testing.T) {
 	result := Word()
 	words := strings.Fields(result)
+
 	if len(words) != 1 {
 		t.Errorf("Expected a single word, got %d words", len(words))
 	}
+	
 	if result[0] < 'A' || result[0] > 'Z' {
 		t.Errorf("Expected word to start with an uppercase letter, got %c", result[0])
 	}
