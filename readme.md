@@ -9,7 +9,9 @@ A [package](#documentation) and [command line tool](#cli-tool) to generate
 
 ![Cover](./assets/cover.gif)
 
-[Blog explaining this package](https://blog.ultirequiem.com/lorelai)
+[Blog explaining this package](https://ultirequiem.hashnode.dev/lorelai)
+
+Checkout the code coverage at: https://ulti.js.org/lorelai
 
 ## Install
 
