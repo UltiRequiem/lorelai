@@ -28,13 +28,13 @@ jobs:
       - name: Run tests and generate coverage report
         run: |
           go test -coverprofile=coverage.out ./pkg
-          go tool cover -html=coverage.out -o coverage.html
+          go tool cover -html=coverage.out -o index.html
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: coverage.html
+          path: index.html
 
   deploy:
     runs-on: ubuntu-latest
