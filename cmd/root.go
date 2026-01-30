@@ -5,28 +5,61 @@ import (
 	"os"
 	"strings"
 
+	"github.com/spf13/cobra"
+
 	chigo "github.com/UltiRequiem/chigo/pkg"
 	lorelai "github.com/UltiRequiem/lorelai/pkg"
 )
 
 const VERSION = "1.1.1"
 
-func Main() {
-	help, words, paragraphs, sentences, fileToWrite, url, email, colors := flags()
+var (
+	words      int
+	paragraphs int
+	sentences  int
+	output     string
+	url        bool
+	email      bool
+	colors     bool
+)
 
-	if help {
-		printHelp()
-		return
-	}
+var rootCmd = &cobra.Command{
+	Use:     "lorelai",
+	Short:   "Easily generate Lorem Ipsum on command line",
+	Version: VERSION,
+	Long: `lorelai ` + VERSION + `
+Easily generate Lorem Ipsum on command line.
 
+Examples:
+    lorelai -w 55           # Will print 55 words
+    lorelai -p 5            # Will print 5 paragraphs
+    lorelai -s 5 --output b # Will write 5 sentences on file b if possible
+    lorelai -w 55 -s 5      # Will print 55 words and 5 sentences
+
+If you need more help, found a bug or want to suggest a new feature:
+https://github.com/UltiRequiem/lorelai`,
+	RunE: run,
+}
+
+func init() {
+	rootCmd.Flags().IntVarP(&words, "words", "w", 0, "Number of words to print")
+	rootCmd.Flags().IntVarP(&paragraphs, "paragraph", "p", 0, "Number of paragraphs to print")
+	rootCmd.Flags().IntVarP(&sentences, "sentences", "s", 0, "Number of sentences to print")
+	rootCmd.Flags().StringVarP(&output, "output", "o", "", "If passed it will try to put the output in a file")
+	rootCmd.Flags().BoolVar(&url, "url", false, "A random URL")
+	rootCmd.Flags().BoolVar(&email, "email", false, "A random Email Address")
+	rootCmd.Flags().BoolVar(&colors, "color", false, "Print the output with colors?")
+}
+
+func run(cmd *cobra.Command, args []string) error {
 	if url {
 		fmt.Println(lorelai.URL())
-		return
+		return nil
 	}
 
 	if email {
 		fmt.Println(lorelai.Email())
-		return
+		return nil
 	}
 
 	var text strings.Builder
@@ -46,14 +79,12 @@ func Main() {
 		text.WriteString("\n\n")
 	}
 
-	if fileToWrite != "" {
-		err := os.WriteFile(fileToWrite, []byte(text.String()), 0664)
-
+	if output != "" {
+		err := os.WriteFile(output, []byte(text.String()), 0664)
 		if err != nil {
-			error(fmt.Sprintf("Error while trying to write %s.", fileToWrite))
+			return fmt.Errorf("error while trying to write %s: %w", output, err)
 		}
-
-		return
+		return nil
 	}
 
 	if text.Len() > 0 {
@@ -62,12 +93,18 @@ func Main() {
 
 		if colors {
 			chigo.PrintWithColors(textNoNewline)
-			return
+			return nil
 		}
 
 		fmt.Println(textNoNewline)
-		return
+		return nil
 	}
 
-	printHelp()
+	// If no flags provided, show help
+	return cmd.Help()
+}
+
+// Execute runs the root command
+func Execute() error {
+	return rootCmd.Execute()
 }

@@ -1,7 +1,15 @@
 package main
 
-import "github.com/UltiRequiem/lorelai/cmd"
+import (
+	"fmt"
+	"os"
+
+	"github.com/UltiRequiem/lorelai/cmd"
+)
 
 func main() {
-	cmd.Main()
+	if err := cmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 }
