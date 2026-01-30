@@ -14,6 +14,20 @@ func TestLoremWords(t *testing.T) {
 	}
 }
 
+func TestLoremWordsZero(t *testing.T) {
+	result := LoremWords(0)
+	if result != "" {
+		t.Errorf("Expected empty string for 0 words, got %q", result)
+	}
+}
+
+func TestLoremWordsNegative(t *testing.T) {
+	result := LoremWords(-5)
+	if result != "" {
+		t.Errorf("Expected empty string for negative words, got %q", result)
+	}
+}
+
 func TestFormattedLoremWords(t *testing.T) {
 	n := 5
 	result := FormattedLoremWords(n)
@@ -36,9 +50,22 @@ func TestWord(t *testing.T) {
 	if len(words) != 1 {
 		t.Errorf("Expected a single word, got %d words", len(words))
 	}
-	
+
 	if result[0] < 'A' || result[0] > 'Z' {
 		t.Errorf("Expected word to start with an uppercase letter, got %c", result[0])
+	}
+}
+
+func TestTitle(t *testing.T) {
+	result := Title()
+	words := strings.Fields(result)
+
+	if len(words) != 1 {
+		t.Errorf("Expected a single word, got %d words", len(words))
+	}
+
+	if result[0] < 'A' || result[0] > 'Z' {
+		t.Errorf("Expected title to start with an uppercase letter, got %c", result[0])
 	}
 }
 

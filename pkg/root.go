@@ -2,14 +2,9 @@
 package lorelai
 
 import (
-	"math/rand"
+	"math/rand/v2"
 	"strings"
-	"time"
 )
-
-// Rng is the random number generator used by the package.
-// It can be seeded by the user for deterministic output.
-var Rng = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 // Get [quantity] words
 func LoremWords(quantity int) string {
@@ -24,7 +19,7 @@ func LoremWords(quantity int) string {
 		if i > 0 {
 			b.WriteByte(' ')
 		}
-		b.WriteString(DATA[Rng.Intn(len(DATA))])
+		b.WriteString(DATA[rand.IntN(len(DATA))])
 	}
 
 	return b.String()
