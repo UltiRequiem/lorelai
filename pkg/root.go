@@ -11,15 +11,21 @@ var rng = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 // Get [quantity] words
 func LoremWords(quantity int) string {
-
-	lorem := ""
-
-	for i := 0; i < quantity; i++ {
-		lorem += DATA[rng.Intn(1100)] + " "
+	if quantity <= 0 {
+		return ""
 	}
 
-	return lorem
+	var b strings.Builder
+	b.Grow(quantity * 8) // heuristic: avg word + space
 
+	for i := range quantity {
+		if i > 0 {
+			b.WriteByte(' ')
+		}
+		b.WriteString(DATA[rng.Intn(len(DATA))])
+	}
+
+	return b.String()
 }
 
 // Get [quantity] words, the first word is capitalized, ends with a dot.
