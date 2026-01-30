@@ -27,6 +27,16 @@ func ClassicSentence() string {
 	return buildClassicText(8)
 }
 
+// ClassicWordsPerSentence returns the word count per sentence
+func ClassicWordsPerSentence() int {
+	return 8
+}
+
+// ClassicWordsPerSentence returns the word count per praragraph
+func ClassicWordsPerParagraph() int {
+	return len(classicText)
+}
+
 // ClassicWords returns the specified number of words from the classic Lorem Ipsum text
 func ClassicWords(quantity int) string {
 	if quantity <= 0 {
