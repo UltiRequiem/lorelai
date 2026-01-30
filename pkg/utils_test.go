@@ -19,3 +19,25 @@ func TestTrimSpaceAddDot(t *testing.T) {
 		t.Errorf("Expected '%s', got '%s'", expected, result)
 	}
 }
+
+func TestCapitalizeFirstWord(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		expected string
+	}{
+		{"normal text", "hello world", "Hello world"},
+		{"empty string", "", ""},
+		{"single char", "a", "A"},
+		{"already capitalized", "Hello", "Hello"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := capitalizeFirstWord(tt.input)
+			if result != tt.expected {
+				t.Errorf("capitalizeFirstWord(%q) = %q, want %q", tt.input, result, tt.expected)
+			}
+		})
+	}
+}
