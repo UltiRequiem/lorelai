@@ -76,13 +76,12 @@
 		<pre class="file" id="file0" style="display: none">package lorelai
 
 import (
-        "math/rand"
         "strings"
 )
 
 // Get a random Domain
 func Domain() string <span class="cov8" title="1">{
-        return trimSpaceAddDot(LoremWords(1)) + TLDS[rand.Intn(len(TLDS))]
+        return trimSpaceAddDot(LoremWords(1)) + TLDS[Rng.Intn(len(TLDS))]
 }</span>
 
 // Get a random URL
@@ -105,7 +104,9 @@ import (
         "time"
 )
 
-var rng = rand.New(rand.NewSource(time.Now().UnixNano()))
+// Rng is the random number generator used by the package.
+// It can be seeded by the user for deterministic output.
+var Rng = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 // Get [quantity] words
 func LoremWords(quantity int) string <span class="cov8" title="1">{
@@ -120,7 +121,7 @@ func LoremWords(quantity int) string <span class="cov8" title="1">{
                 if i &gt; 0 </span><span class="cov8" title="1">{
                         b.WriteByte(' ')
                 }</span>
-                <span class="cov8" title="1">b.WriteString(DATA[rng.Intn(len(DATA))])</span>
+                <span class="cov8" title="1">b.WriteString(DATA[Rng.Intn(len(DATA))])</span>
         }
 
         <span class="cov8" title="1">return b.String()</span>
