@@ -57,7 +57,7 @@
 				
 				<option value="file0">github.com/UltiRequiem/lorelai/pkg/convenience.go (100.0%)</option>
 				
-				<option value="file1">github.com/UltiRequiem/lorelai/pkg/root.go (90.0%)</option>
+				<option value="file1">github.com/UltiRequiem/lorelai/pkg/root.go (86.7%)</option>
 				
 				<option value="file2">github.com/UltiRequiem/lorelai/pkg/utils.go (80.0%)</option>
 				
@@ -109,15 +109,21 @@ var rng = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 // Get [quantity] words
 func LoremWords(quantity int) string <span class="cov8" title="1">{
-
-        lorem := ""
-
-        for i := 0; i &lt; quantity; i++ </span><span class="cov8" title="1">{
-                lorem += DATA[rng.Intn(1100)] + " "
+        if quantity &lt;= 0 </span><span class="cov0" title="0">{
+                return ""
         }</span>
 
-        <span class="cov8" title="1">return lorem</span>
+        <span class="cov8" title="1">var b strings.Builder
+        b.Grow(quantity * 8) // heuristic: avg word + space
 
+        for i := 0; i &lt; quantity; i++ </span><span class="cov8" title="1">{
+                if i &gt; 0 </span><span class="cov8" title="1">{
+                        b.WriteByte(' ')
+                }</span>
+                <span class="cov8" title="1">b.WriteString(DATA[rng.Intn(len(DATA))])</span>
+        }
+
+        <span class="cov8" title="1">return b.String()</span>
 }
 
 // Get [quantity] words, the first word is capitalized, ends with a dot.
