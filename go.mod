@@ -1,4 +1,4 @@
-module github.com/UltiRequiem/lorelai
+module github.com/bobadilla-tech/lorelai
 
 go 1.22
 

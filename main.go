@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/UltiRequiem/lorelai/cmd"
+	"github.com/bobadilla-tech/lorelai/cmd"
 )
 
 func main() {

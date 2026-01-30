@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 
 	chigo "github.com/UltiRequiem/chigo/pkg"
-	lorelai "github.com/UltiRequiem/lorelai/pkg"
+	lorelai "github.com/bobadilla-tech/lorelai/pkg"
 )
 
 const VERSION = "1.1.1"

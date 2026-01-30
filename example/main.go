@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/UltiRequiem/lorelai/pkg"
+	"github.com/bobadilla-tech/lorelai/pkg"
 )
 
 func sayHi() {
