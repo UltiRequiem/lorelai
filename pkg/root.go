@@ -24,7 +24,6 @@ func LoremWords(quantity int) string {
 		}
 		b.WriteString(DATA[rng.Intn(len(DATA))])
 	}
-	}
 
 	return b.String()
 }
