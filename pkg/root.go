@@ -18,11 +18,12 @@ func LoremWords(quantity int) string {
 	var b strings.Builder
 	b.Grow(quantity * 8) // heuristic: avg word + space
 
-	for i := range quantity {
+	for i := 0; i < quantity; i++ {
 		if i > 0 {
 			b.WriteByte(' ')
 		}
 		b.WriteString(DATA[rng.Intn(len(DATA))])
+	}
 	}
 
 	return b.String()
