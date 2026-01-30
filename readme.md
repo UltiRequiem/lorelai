@@ -35,9 +35,9 @@ func printTonsOfText() {
 
 ```go
 func sayHi() {
-	fmt.Println(fmt.Sprintf("My, my name is: %s.", lorelai.Word()))
-	fmt.Println(fmt.Sprintf("My email address is %s", lorelai.Email()))
-	fmt.Println(fmt.Sprintf("My website is: %s", lorelai.URL()))
+	fmt.Printf("My, my name is: %s.\n", lorelai.Word())
+	fmt.Printf("My email address is %s\n", lorelai.Email())
+	fmt.Printf("My website is: %s\n", lorelai.URL())
 }
 ```
 
@@ -88,7 +88,7 @@ E.g: "neque.net", "arcu.org" , "lorem.io", etc.
 E.g: "https://pellentesque.org", "https://id.io" , "https://efficitur.com", etc.
 
 - [Email](https://github.com/UltiRequiem/lorelai/blob/main/pkg/convenience.go#L22):
-  Retuns an email address
+  Returns an email address
 
 E.g: "bibendum@id.pe", "ornare@duis.pe" , "quisque@faucibus.org", etc.
 
@@ -139,7 +139,7 @@ If you don't pass any flag or you pass the help flag:
 
 ## Contributing
 
-Feel free to sugest new features or report bugs.
+Feel free to suggest new features or report bugs.
 
 A big thanks to [Antoineio](https://github.com/Antoineio) for adding tests and
 contributing to the CI.

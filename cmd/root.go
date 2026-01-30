@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	chigo "github.com/UltiRequiem/chigo/pkg"
 	lorelai "github.com/UltiRequiem/lorelai/pkg"
@@ -28,25 +29,25 @@ func Main() {
 		return
 	}
 
-	text := ""
+	var text strings.Builder
 
 	for i := 0; i < words; i++ {
-		text += lorelai.Word()
-		text += "\n"
+		text.WriteString(lorelai.Word())
+		text.WriteByte('\n')
 	}
 
 	for i := 0; i < sentences; i++ {
-		text += lorelai.Sentence()
-		text += "\n\n"
+		text.WriteString(lorelai.Sentence())
+		text.WriteString("\n\n")
 	}
 
 	for i := 0; i < paragraphs; i++ {
-		text += lorelai.Paragraph()
-		text += "\n\n"
+		text.WriteString(lorelai.Paragraph())
+		text.WriteString("\n\n")
 	}
 
 	if fileToWrite != "" {
-		err := os.WriteFile(fileToWrite, []byte(text), 0664)
+		err := os.WriteFile(fileToWrite, []byte(text.String()), 0664)
 
 		if err != nil {
 			error(fmt.Sprintf("Error while trying to write %s.", fileToWrite))
@@ -55,8 +56,9 @@ func Main() {
 		return
 	}
 
-	if text != "" {
-		textNoNewline := text[0 : len(text)-2] // Remove the new line at the end
+	if text.Len() > 0 {
+		textStr := text.String()
+		textNoNewline := textStr[0 : len(textStr)-2] // Remove the new line at the end
 
 		if colors {
 			chigo.PrintWithColors(textNoNewline)

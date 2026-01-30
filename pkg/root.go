@@ -40,7 +40,7 @@ func Word() string {
 	return strings.TrimSpace(strings.ToTitle(word))
 }
 
-func Tittle() string {
+func Title() string {
 	return strings.ToTitle(LoremWords(1))
 }
 
