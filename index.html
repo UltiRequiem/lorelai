@@ -55,7 +55,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">github.com/bobadilla-tech/lorelai/pkg/classic.go (94.1%)</option>
+				<option value="file0">github.com/bobadilla-tech/lorelai/pkg/classic.go (84.2%)</option>
 				
 				<option value="file1">github.com/bobadilla-tech/lorelai/pkg/convenience.go (100.0%)</option>
 				
@@ -102,6 +102,16 @@ func ClassicParagraph() string <span class="cov8" title="1">{
 // ClassicSentence returns a sentence from the classic Lorem Ipsum text
 func ClassicSentence() string <span class="cov8" title="1">{
         return buildClassicText(8)
+}</span>
+
+// ClassicWordsPerSentence returns the word count per sentence
+func ClassicWordsPerSentence() int <span class="cov0" title="0">{
+        return 8
+}</span>
+
+// ClassicWordsPerSentence returns the word count per praragraph
+func ClassicWordsPerParagraph() int <span class="cov0" title="0">{
+        return len(classicText)
 }</span>
 
 // ClassicWords returns the specified number of words from the classic Lorem Ipsum text
