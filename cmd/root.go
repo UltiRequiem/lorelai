@@ -21,6 +21,7 @@ var (
 	url        bool
 	email      bool
 	colors     bool
+	classic    bool
 )
 
 var rootCmd = &cobra.Command{
@@ -49,6 +50,7 @@ func init() {
 	rootCmd.Flags().BoolVar(&url, "url", false, "A random URL")
 	rootCmd.Flags().BoolVar(&email, "email", false, "A random Email Address")
 	rootCmd.Flags().BoolVar(&colors, "color", false, "Print the output with colors?")
+	rootCmd.Flags().BoolVar(&classic, "classic", false, "Use classic Lorem Ipsum text (starts with 'Lorem ipsum dolor sit amet...')")
 }
 
 func run(cmd *cobra.Command, args []string) error {
@@ -64,19 +66,38 @@ func run(cmd *cobra.Command, args []string) error {
 
 	var text strings.Builder
 
-	for i := 0; i < words; i++ {
-		text.WriteString(lorelai.Word())
-		text.WriteByte('\n')
-	}
+	if classic {
+		// Classic Lorem Ipsum mode
+		if words > 0 {
+			text.WriteString(lorelai.ClassicWords(words))
+			text.WriteString("\n")
+		}
 
-	for i := 0; i < sentences; i++ {
-		text.WriteString(lorelai.Sentence())
-		text.WriteString("\n\n")
-	}
+		for i := 0; i < sentences; i++ {
+			text.WriteString(lorelai.ClassicSentence())
+			text.WriteString("\n\n")
+		}
 
-	for i := 0; i < paragraphs; i++ {
-		text.WriteString(lorelai.Paragraph())
-		text.WriteString("\n\n")
+		for i := 0; i < paragraphs; i++ {
+			text.WriteString(lorelai.ClassicParagraph())
+			text.WriteString("\n\n")
+		}
+	} else {
+		// Random Lorem Ipsum mode
+		for i := 0; i < words; i++ {
+			text.WriteString(lorelai.Word())
+			text.WriteByte('\n')
+		}
+
+		for i := 0; i < sentences; i++ {
+			text.WriteString(lorelai.Sentence())
+			text.WriteString("\n\n")
+		}
+
+		for i := 0; i < paragraphs; i++ {
+			text.WriteString(lorelai.Paragraph())
+			text.WriteString("\n\n")
+		}
 	}
 
 	if output != "" {
