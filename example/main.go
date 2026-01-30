@@ -13,11 +13,11 @@ func sayHi() {
 
 	fmt.Printf(`My favorite phrase is: "%s"`+"\n", lorelai.FormattedLoremWords(5))
 
-	fmt.Println("Let me tell you an history:")
+	fmt.Println("Let me tell you a history:")
 
 	fmt.Println(lorelai.Paragraph())
 
-	fmt.Println("Didn't you like the story? Let me tell you 4 words abou the author:")
+	fmt.Println("Didn't you like the story? Let me tell you 4 words about the author:")
 
 	fmt.Println(lorelai.LoremWords(4))
 }

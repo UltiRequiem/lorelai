@@ -1,13 +1,12 @@
 package lorelai
 
 import (
-	"math/rand"
 	"strings"
 )
 
 // Get a random Domain
 func Domain() string {
-	return trimSpaceAddDot(LoremWords(1)) + TLDS[rand.Intn(len(TLDS))]
+	return trimSpaceAddDot(LoremWords(1)) + TLDS[Rng.Intn(len(TLDS))]
 }
 
 // Get a random URL

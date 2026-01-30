@@ -7,7 +7,9 @@ import (
 	"time"
 )
 
-var rng = rand.New(rand.NewSource(time.Now().UnixNano()))
+// Rng is the random number generator used by the package.
+// It can be seeded by the user for deterministic output.
+var Rng = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 // Get [quantity] words
 func LoremWords(quantity int) string {
@@ -22,7 +24,7 @@ func LoremWords(quantity int) string {
 		if i > 0 {
 			b.WriteByte(' ')
 		}
-		b.WriteString(DATA[rng.Intn(len(DATA))])
+		b.WriteString(DATA[Rng.Intn(len(DATA))])
 	}
 
 	return b.String()
