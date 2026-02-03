@@ -31,6 +31,24 @@ func printTonsOfText() {
 }
 ```
 
+### Structured Text Generation
+
+```go
+func generateStructuredContent() {
+	// Generate 3 paragraphs with 5 sentences each
+	result := lorelai.Generate(3, 5)
+	fmt.Println(result.Text)
+	fmt.Printf("Generated %d words across %d paragraphs\n",
+		result.WordCount, result.Paragraphs)
+}
+
+func generateClassicLorem() {
+	// Generate classic Lorem Ipsum text
+	result := lorelai.ClassicGenerate(2, 4)
+	fmt.Println(result.Text)
+}
+```
+
 ### Convenience Utilities
 
 ```go
@@ -45,52 +63,55 @@ For more examples check the [examples directory](./example/main.go).
 
 ## Documentation
 
-This package exports 8 functions:
+### Core Text Generation Functions
 
-- [Word](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go#L29):
-  Returns 1 Word
+**Random Lorem Ipsum:**
 
-E.g: "sodales", "phasellus" , "diam", etc.
+- **[Word](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go)**: Returns 1 random word
+  E.g: "sodales", "phasellus", "diam"
 
-- [Sentence](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go#L34):
-  Returns 8 Words
+- **[Sentence](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go)**: Returns 8 random words (1 sentence)
+  E.g: "Varius sed imperdiet amet laoreet ex sapien placerat."
 
-E.g: "Varius sed imperdiet amet laoreet ex sapien placerat.", etc.
+- **[Paragraph](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go)**: Returns 45 random words (1 paragraph)
+  E.g: "Nisi lacinia ante non nunc eros nibh mattis enim orci ante in ornare accumsan..."
 
-- [Paragraph](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go#L39):
-  Returns 45 Words
+- **[Generate](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go)**: Generate structured text with X paragraphs of Y sentences each
+  Returns: `Lorem{Text, Paragraphs, Sentences, WordCount}`
+  E.g: `Generate(3, 5)` creates 3 paragraphs with 5 sentences each (120 words)
 
-E.g: "Nisi lacinia ante non nunc eros nibh mattis enim orci ante in ornare
-accumsan iaculis vel..."
+**Classic Lorem Ipsum:**
 
-- [FormattedLoremWords](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go#L24):
-  It receives a number and returns a string with the number of words you have
-  indicated. The first letter will be capital and the sentence will end with a
-  dot.
+- **[ClassicSentence](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/classic.go)**: Returns 8 words from classic text
+  Always starts with "Lorem ipsum dolor sit amet..."
 
-E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed.",
-"Ligula.", etc.
+- **[ClassicParagraph](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/classic.go)**: Returns full classic Lorem paragraph
+  The traditional Lorem Ipsum text
 
-- [LoremWords](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go#L10):
-  It receives a number and returns a string with the number of words you have
-  indicated.
+- **[ClassicGenerate](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/classic.go)**: Generate classic text with X paragraphs of Y sentences each
+  Returns: `Lorem{Text, Paragraphs, Sentences, WordCount}`
+  E.g: `ClassicGenerate(2, 4)` creates 2 paragraphs with 4 classic sentences each
 
-E.g: "arcu", "blandit porttitor a scelerisque", "donec justo lacinia", etc.
+- **[ClassicWords](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/classic.go)**: Returns N words from classic text
 
-- [Domain](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/convenience.go#L10):
-  Returns a domain
+### Word Generation Functions
 
-E.g: "neque.net", "arcu.org" , "lorem.io", etc.
+- **[LoremWords](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go)**: Returns N random words
+  E.g: "arcu", "blandit porttitor a scelerisque", "donec justo lacinia"
 
-- [URL](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/convenience.go#L17):
-  Returns an URL
+- **[FormattedLoremWords](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/root.go)**: Returns N words with capitalization and period
+  E.g: "Libero malesuada duis massa luctus.", "Curabitur hendrerit sed."
 
-E.g: "https://pellentesque.org", "https://id.io" , "https://efficitur.com", etc.
+### Convenience Utilities
 
-- [Email](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/convenience.go#L22):
-  Returns an email address
+- **[Domain](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/convenience.go)**: Returns a random domain
+  E.g: "neque.net", "arcu.org", "lorem.io"
 
-E.g: "bibendum@id.pe", "ornare@duis.pe" , "quisque@faucibus.org", etc.
+- **[URL](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/convenience.go)**: Returns a random URL
+  E.g: "https://pellentesque.org", "https://id.io", "https://efficitur.com"
+
+- **[Email](https://github.com/bobadilla-tech/lorelai/blob/main/pkg/convenience.go)**: Returns a random email address
+  E.g: "bibendum@id.pe", "ornare@duis.pe", "quisque@faucibus.org"
 
 ## CLI Tool
 
