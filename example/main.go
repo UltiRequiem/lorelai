@@ -28,6 +28,24 @@ func printTonsOfText() {
 	}
 }
 
+func generateStructuredContent() {
+	fmt.Println("\n=== Structured Random Lorem ===")
+	// Generate 3 paragraphs with 5 sentences each
+	result := lorelai.Generate(3, 5)
+	fmt.Println(result.Text)
+	fmt.Printf("\nGenerated %d words across %d paragraphs (%d sentences per paragraph)\n",
+		result.WordCount, result.Paragraphs, result.Sentences)
+}
+
+func generateClassicContent() {
+	fmt.Println("\n=== Classic Lorem Ipsum ===")
+	// Generate classic Lorem Ipsum text: 2 paragraphs with 4 sentences each
+	result := lorelai.ClassicGenerate(2, 4)
+	fmt.Println(result.Text)
+	fmt.Printf("\nGenerated %d words of classic Lorem Ipsum\n", result.WordCount)
+}
+
 func main() {
-	printTonsOfText()
+	generateStructuredContent()
+	generateClassicContent()
 }

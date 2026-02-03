@@ -6,6 +6,7 @@ func capitalizeFirstWord(text string) string {
     if len(text) == 0 {
         return text
     }
+
     return strings.ToUpper(text[:1]) + text[1:]
 }
 
